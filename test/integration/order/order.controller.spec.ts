@@ -7,6 +7,7 @@ import configuration from "../../../src/common/configuration";
 describe("order controller integration tests", () => {
 
   beforeAll(() => MongoDB.connect(configuration.DB_URL));
+  afterEach(() => MongoDB.order().deleteMany({}));
   afterAll(() => MongoDB.close());
 
   it("should return status code 201 from POST /orders", async () => {

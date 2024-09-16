@@ -9,7 +9,6 @@ import { randomNumber } from "../../utils/utils";
 describe("product controller integration tests", () => {
 
   beforeAll(() => MongoDB.connect(configuration.DB_URL));
-  beforeEach(() => MongoDB.product().deleteMany({}));
   afterEach(() => MongoDB.product().deleteMany({}));
   afterAll(() => MongoDB.close());
 
